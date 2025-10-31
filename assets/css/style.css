@@ -1,0 +1,66 @@
+/* B2首页背景图插件样式 - 完全覆盖主题背景 */
+
+/* 重置所有可能影响背景的元素 */
+.site {
+    background-image: none !important;
+    background-color: transparent !important;
+}
+
+.b2-page-bg {
+    background-color: transparent !important;
+}
+
+.b2-page-bg::before {
+    display: none !important;
+}
+
+.b2-bg {
+    background-image: none !important;
+    background-color: transparent !important;
+}
+
+.b2-body-bg {
+    background-color: transparent !important;
+}
+
+body {
+    background: none !important;
+    background-color: transparent !important;
+}
+
+/* 仅保留内容可读性所需的背景色，不修改z-index */
+.site-content > .container,
+.content-area,
+.post,
+.page,
+.comment-list,
+.widget {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* 深色模式兼容 */
+@media (prefers-color-scheme: dark) {
+    .site-content > .container,
+    .content-area,
+    .post,
+    .page,
+    .comment-list,
+    .widget {
+        background-color: rgba(30, 30, 30, 0.9);
+    }
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+    .site-content > .container,
+    .content-area {
+        background-color: rgba(255, 255, 255, 0.95);
+    }
+    
+    @media (prefers-color-scheme: dark) {
+        .site-content > .container,
+        .content-area {
+            background-color: rgba(30, 30, 30, 0.95);
+        }
+    }
+}
